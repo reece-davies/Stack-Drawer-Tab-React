@@ -1,0 +1,66 @@
+Structure:
+App calls Drawer
+Drawer calls Tab
+Tab calls Stack
+Stack calls screens
+
+
+To Do:
+1. Drawer (DONE)
+2. Custom header (for the drawer button)
+3. Bottom tab navigator (DONE)
+4. ETA shit
+
+5. Eliminate warning "Require cycles are allowed..."
+
+https://reactnavigation.org/docs/getting-started/
+
+https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da
+
+https://medium.com/wesionary-team/react-navigation-stack-tab-and-drawer-navigation-in-same-react-native-application-16d03441021
+
+
+////////////////////////////////////////////////////////////
+***************** Default container styles *****************
+////////////////////////////////////////////////////////////
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+
+
+const HomeStack = createStackNavigator(screens);
+
+export default createAppContainer(HomeStack);
+
+
+///////////////////////////////////////////////////////
+***************** Default app.js code ***************** 
+///////////////////////////////////////////////////////
+
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
